@@ -1043,6 +1043,13 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     });
 });
+  
+window.addEventListener('DOMContentLoaded', () => {
+  fetch('./escalas.csv')
+    .then(r => r.text())
+    .then(csvText => processCSV(csvText))
+    .catch(() => {});
+});
 
   
 // ===================== FILE INPUT =====================
